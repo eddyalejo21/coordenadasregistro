@@ -1,0 +1,8 @@
+{
+    "/PuntosBacheoWS/*":{
+        "target":"http//:10.52.66.145:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

@@ -1,0 +1,69 @@
+<ion-header [translucent]="false"
+  style="margin-left: auto;margin-right: auto;background-color:lightsteelblue"
+  mode="ios">
+  
+  <img src="/assets/epmmop.png" style="margin-top: 40px;margin-left: 75px;margin-right: auto; width: 50%;">
+  <img src="/assets/franja.png" style="height: 10px">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="ion-padding" style="margin-top: 30px;">
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0JGumN3otRKeIBI9q-GLUgosfhbMR7TzVMg&usqp=CAU" style="height: 100px;">-->
+   
+       <ion-card-subtitle class="ion-text-center mb-3" style="font-weight: bolder;font-size: medium;">Sistema de geolocalización para incidentes de bacheo</ion-card-subtitle>
+
+      <div class="row">
+        <div class="col-6 col-md-6">
+          <ion-button
+              (click)="getCoordenadas()"
+              expand="block"
+              size="medium"
+              style="padding-left: 15px; "
+              color="secondary"
+              mode="ios">
+                Marcar
+            <ion-icon slot="start" name="locate-outline"></ion-icon>
+          </ion-button>
+        </div>
+        <div class="col-6 col-md-6">
+          <ion-button
+              (click)="limpiarData()"
+              expand="block"
+              size="medium"
+              style="padding-right: 15px;"
+              color="tertiary"
+              mode="ios">
+                Limpiar
+            <ion-icon slot="start" name="trash-outline"></ion-icon>
+          </ion-button>  
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-label position="stacked" style="font-weight: bold;" required>Latitud:</ion-label>
+        <ion-input type="text" readonly="true">{{ latitud }}</ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" style="font-weight: bold;">Longitud:</ion-label>
+        <ion-input type="text" readonly="true">{{ longitud }}</ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" style="font-weight: bold;">Fecha:</ion-label>
+        <ion-input type="text" readonly="true"> {{ fecha | date:'yyyy-MM-dd HH:mm:ss' }}</ion-input>
+      </ion-item>
+
+      <ion-button
+        (click)="registrarPunto()"
+        expand="block"
+        class="ion-padding"
+        size="medium"
+        style="height: 80px;"
+        mode="ios">
+        Registrar
+      </ion-button>
+    
+  </ion-card>
+</ion-content>
